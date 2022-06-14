@@ -29,10 +29,10 @@ namespace BatchPrintYay
         /// </summary>
         /// <param name="commandData"></param>
         /// <returns></returns>
-        public static Dictionary<string, List<MySheet>> GetAllSheets(ExternalCommandData commandData, YayPrintSettings printSets)
+        public static Dictionary<string, List<MySheet>> GetAllSheets(UIApplication uiapp, YayPrintSettings printSets)
         {
             Dictionary<string, List<MySheet>> data = new Dictionary<string, List<MySheet>>();
-            Document mainDoc = commandData.Application.ActiveUIDocument.Document;
+            Document mainDoc = uiapp.ActiveUIDocument.Document;
             string mainDocTitle = GetDocTitleWithoutRvt(mainDoc.Title);
 
             List<RevitLinkInstance> links = new FilteredElementCollector(mainDoc)
